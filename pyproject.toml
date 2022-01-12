@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "sword-to-json"
+version = "0.1.0"
+description = "Generate JSON Files of Bible Translations from SWORD Modules"
+license = "GPL-3.0-or-later"
+
+authors = ["evnskc <evans@fundi.dev>"]
+
+readme = "README.md"
+
+repository = "https://github.com/evnskc/sword-to-json"
+
+keywords = ["SWORD", "Bible Text", "JSON"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pysword = "^0.2.7"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
