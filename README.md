@@ -1,3 +1,9 @@
+![CI Workflow](https://github.com/evnskc/sword-to-json/actions/workflows/ci.yml/badge.svg)
+
+![STAGING Workflow](https://github.com/evnskc/sword-to-json/actions/workflows/staging.yml/badge.svg)
+
+![CI Workflow](https://github.com/evnskc/sword-to-json/actions/workflows/production.yml/badge.svg)
+
 ## Generate JSON Files of Bible Translations from SWORD Modules
 
 The [SWORD project provides modules](http://crosswire.org/sword/modules/ModDisp.jsp?modType=Bibles) freely for common
