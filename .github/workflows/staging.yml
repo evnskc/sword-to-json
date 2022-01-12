@@ -1,0 +1,41 @@
+name: STAGING
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: STAGING
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v2
+
+      - name: Set up python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Set up poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python -
+          poetry config virtualenvs.in-project true
+          poetry env use python
+
+      - name: Set up cache
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Run build
+        run: poetry build
+
+      - name: Publish to TestPyPI
+        env:
+          POETRY_REPOSITORIES_TESTPYPI_URL: https://test.pypi.org/legacy/
+        run: poetry publish --repository testpypi --username=__token__ --password=${{ secrets.TESTPYPI_API_TOKEN }}
