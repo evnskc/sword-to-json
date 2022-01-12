@@ -1,0 +1,39 @@
+name: PRODUCTION
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: PRODUCTION
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v2
+
+      - name: Set up python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Set up poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python -
+          poetry config virtualenvs.in-project true
+          poetry env use python
+
+      - name: Set up cache
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: venv-${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+
+      - name: Run build
+        run: poetry build
+
+      - name: Publish to PyPI
+        run: poetry publish --username=__token__ --password=${{ secrets.PYPI_API_TOKEN }}
