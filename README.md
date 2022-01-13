@@ -17,6 +17,7 @@ Sample JSON format.
   "abbreviation": "KJV",
   "books": [
     {
+      "number": 1,
       "name": "Genesis",
       "abbreviation": "Gen",
       "chapters": [
