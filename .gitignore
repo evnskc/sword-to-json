@@ -23,9 +23,6 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-pip-log.txt
-pip-delete-this-directory.txt
-
 htmlcov/
 .tox/
 .nox/
@@ -40,7 +37,8 @@ coverage.xml
 .pytest_cache/
 cover/
 
+__pypackages__/
+
+.venv/
 
 .idea/
-.venv/
-__pypackages__/
