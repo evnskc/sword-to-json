@@ -10,28 +10,24 @@ Bible translations in different languages.
 Sample JSON format.
 
 ```json
-{
-  "name": "King James Version",
-  "abbreviation": "KJV",
-  "books": [
-    {
-      "number": 1,
-      "name": "Genesis",
-      "abbreviation": "Gen",
-      "chapters": [
-        {
-          "number": 1,
-          "verses": [
-            {
-              "number": 1,
-              "text": "In the beginning God created the heavens and the earth. "
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+ [
+  {
+    "number": 1,
+    "name": "Genesis",
+    "abbreviation": "Gen",
+    "chapters": [
+      {
+        "number": 1,
+        "verses": [
+          {
+            "number": 1,
+            "text": "In the beginning God created the heavens and the earth."
+          }
+        ]
+      }
+    ]
+  }
+]
 ```
 
 ## Installation
@@ -48,12 +44,12 @@ pip install sword-to-json
 poetry add sword-to-json
 ```
 
-## Usage 
+## Usage
 
-```commandline
-python -m sword_to_json sword module [--name NAME] [--abbreviation ABBREVIATION] [--output OUTPUT]
+```text
+python -m sword_to_json sword module [--output OUTPUT]
 ```
 
 ```commandline
-python -m sword_to_json /home/user/Downloads/KJV.zip KJV --name "King James Version" --abbreviation KJV --output /home/user/Downlods/KJV.json
+python -m sword_to_json /home/user/Downloads/KJV.zip KJV --output /home/user/Downlods/KJV.json
 ```
