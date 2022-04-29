@@ -38,5 +38,5 @@ jobs:
         env:
           POETRY_HTTP_BASIC_PYPI_USERNAME: __token__
           POETRY_HTTP_BASIC_PYPI_PASSWORD: ${{ secrets.TESTPYPI_API_TOKEN }}
-          POETRY_REPOSITORIES_TEST_PYPI: https://test.pypi.org/legacy/
+          POETRY_REPOSITORIES_TEST_PYPI_URL: https://test.pypi.org/legacy/
         run: poetry publish --repository test-pypi
