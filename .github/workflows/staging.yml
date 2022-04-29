@@ -13,29 +13,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
-          python-version: 3.x
+          python-version: 3.10.x
 
       - name: Set up poetry
         run: |
           curl -sSL https://install.python-poetry.org | python -
           poetry config virtualenvs.in-project true
-          poetry env use python
 
       - name: Set up cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
-          path: .venv
-          key: venv-${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+          path: ./**/.venv
+          key: poetry-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
       - name: Run build
         run: poetry build
 
       - name: Publish to TestPyPI
         env:
-          POETRY_REPOSITORIES_TESTPYPI_URL: https://test.pypi.org/legacy/
-        run: poetry publish --repository testpypi --username=__token__ --password=${{ secrets.TESTPYPI_API_TOKEN }}
+          POETRY_HTTP_BASIC_PYPI_USERNAME: __token__
+          POETRY_HTTP_BASIC_PYPI_PASSWORD: ${{ secrets.TESTPYPI_API_TOKEN }}
+          POETRY_REPOSITORIES_TEST_PYPI: https://test.pypi.org/legacy/
+        run: poetry publish --repository test-pypi

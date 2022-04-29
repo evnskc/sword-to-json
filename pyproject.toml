@@ -8,7 +8,11 @@ authors = ["evans <evans@fundi.dev>"]
 
 readme = "README.md"
 
+homepage = "https://github.com/evnskc/sword-to-json"
+
 repository = "https://github.com/evnskc/sword-to-json"
+
+documentation = "https://github.com/evnskc/sword-to-json"
 
 keywords = ["sword", "bible text", "json"]
 
