@@ -11,6 +11,7 @@ jobs:
   staging:
     name: Deploy to Staging
     environment: staging
+    continue-on-error: true
     runs-on: ubuntu-latest
     steps:
       - name: Set up repository
@@ -44,6 +45,7 @@ jobs:
   production:
     name: Deploy to Production
     environment: production
+    continue-on-error: true
     runs-on: ubuntu-latest
     steps:
       - name: Set up repository
