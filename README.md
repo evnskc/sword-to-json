@@ -1,5 +1,5 @@
-![CI](https://github.com/evnskc/sword-to-json/actions/workflows/ci.yml/badge.svg)
-![CD](https://github.com/evnskc/sword-to-json/actions/workflows/cd.yml/badge.svg?branch=main)
+[![CI](https://github.com/evnskc/sword-to-json/actions/workflows/ci.yml/badge.svg)](https://github.com/evnskc/sword-to-json/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/sword-to-json)](https://pypi.org/project/sword-to-json/)
 
 ## Generate JSON Files of Bible Translations from SWORD Modules
 
