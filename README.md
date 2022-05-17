@@ -47,9 +47,9 @@ poetry add sword-to-json
 ## Usage
 
 ```text
-python -m sword_to_json sword module [--output OUTPUT]
+sword-to-json sword module [--output OUTPUT]
 ```
 
 ```commandline
-python -m sword_to_json /home/user/Downloads/KJV.zip KJV --output /home/user/Downlods/KJV.json
+sword-to-json /home/user/Downloads/KJV.zip KJV --output /home/user/Downlods/KJV.json
 ```

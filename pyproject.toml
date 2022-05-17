@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sword-to-json"
-version = "1.4.8"
+version = "1.5.0"
 description = "Generate JSON Files of Bible Translations from SWORD Modules"
 license = "GPL-3.0-or-later"
 
@@ -27,3 +27,6 @@ jsonschema = "^4.5.1"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+sword-to-json = "sword_to_json.__main__:main"
