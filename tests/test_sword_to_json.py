@@ -1,4 +1,5 @@
 from jsonschema import validate
+
 from sword_to_json.books_from_sword import generate_books
 
 

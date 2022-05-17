@@ -1,4 +1,5 @@
 from itertools import chain
+
 from pysword.modules import SwordModules
 
 
