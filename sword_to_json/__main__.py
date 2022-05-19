@@ -17,7 +17,7 @@ parser.add_argument('--version', '-v', action='version', version=f"{metadata['na
 args = parser.parse_args()
 
 if args.output is None:
-    args.output = f"{os.path.dirname(args.sword)}/{args.module}.json"
+    args.output = f"{os.path.abspath(os.path.dirname(args.sword))}/{args.module}.json"
 
 
 def main():
