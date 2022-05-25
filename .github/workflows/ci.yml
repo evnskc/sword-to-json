@@ -36,7 +36,7 @@ jobs:
       - name: Set up cache
         uses: actions/cache@v3
         with:
-          path: ./.venv
+          path: .venv
           key: poetry-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
       - name: Install dependencies
