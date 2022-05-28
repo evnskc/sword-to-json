@@ -1,0 +1,27 @@
+name: Set up python and poetry
+
+description: Composite action to set up python and poetry
+
+runs:
+  using: composite
+  steps:
+    - name: Set up python
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.10.x
+
+    - name: Set up poetry
+      shell: bash
+      run: |
+        curl -sSL https://install.python-poetry.org | python -
+        poetry config virtualenvs.in-project true
+
+    - name: Set up cache
+      uses: actions/cache@v3
+      with:
+        path: ./.venv
+        key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
+
+    - name: Install dependencies
+      shell: bash
+      run: poetry install
