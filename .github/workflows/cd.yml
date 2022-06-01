@@ -22,7 +22,7 @@ jobs:
 
       - name: Publish to TestPyPI
         run: |
-          poetry config repository.testpypi https://test.pypi.org/legacy/
+          poetry config repositories.testpypi https://test.pypi.org/legacy/
           poetry publish --username __token__ --password ${{ secrets.API_TOKEN }} --repository testpypi --build
 
   production:
