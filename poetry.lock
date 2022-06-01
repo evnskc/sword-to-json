@@ -104,7 +104,7 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "pysword"
-version = "0.2.7"
+version = "0.2.8"
 description = "A native Python2/3 reader module for the SWORD Project Bible Modules"
 category = "main"
 optional = false
@@ -142,7 +142,7 @@ python-versions = ">=3.7"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "4fc35a0cad7cefda22fdeabe8c3ab228437f91b436d3b39f98a9b73835585010"
+content-hash = "147a71f0ccfe415ef696431eef4e5a40f83da31bf77a198cfeec8427f27fd82c"
 
 [metadata.files]
 atomicwrites = [
@@ -205,7 +205,7 @@ pyrsistent = [
     {file = "pyrsistent-0.18.1.tar.gz", hash = "sha256:d4d61f8b993a7255ba714df3aca52700f8125289f84f704cf80916517c46eb96"},
 ]
 pysword = [
-    {file = "pysword-0.2.7.tar.gz", hash = "sha256:663bdec681b05c85aac783dc9795d5678dec0bde82dccb67aea7c0c03839a59f"},
+    {file = "pysword-0.2.8.tar.gz", hash = "sha256:6302f350c22f39090e2556729551fac57a4c25ceb268f90cd7fd0584b9cca4f0"},
 ]
 pytest = [
     {file = "pytest-7.1.2-py3-none-any.whl", hash = "sha256:13d0e3ccfc2b6e26be000cb6568c832ba67ba32e719443bfe725814d3c42433c"},

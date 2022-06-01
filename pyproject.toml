@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sword-to-json"
-version = "1.5.2"
+version = "1.5.3"
 description = "Generate JSON Files of Bible Translations from SWORD Modules"
 license = "GPL-3.0-or-later"
 
@@ -18,7 +18,7 @@ keywords = ["sword", "bible text", "json"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-pysword = "^0.2.7"
+pysword = "^0.2.8"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
