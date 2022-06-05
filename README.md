@@ -10,24 +10,46 @@ Bible translations in different languages.
 Sample JSON format.
 
 ```json
- [
-  {
-    "number": 1,
-    "name": "Genesis",
-    "abbreviation": "Gen",
-    "chapters": [
+{
+  "books": {
+    "ot": [
       {
         "number": 1,
-        "verses": [
+        "name": "Genesis",
+        "abbreviation": "Gen",
+        "chapters": [
           {
             "number": 1,
-            "text": "In the beginning God created the heavens and the earth."
+            "verses": [
+              {
+                "number": 1,
+                "text": "In the beginning God created the heaven and the earth."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "nt": [
+      {
+        "number": 40,
+        "name": "Matthew",
+        "abbreviation": "Matt",
+        "chapters": [
+          {
+            "number": 1,
+            "verses": [
+              {
+                "number": 1,
+                "text": "The book of the generation of Jesus Christ, the son of David, the son of Abraham."
+              }
+            ]
           }
         ]
       }
     ]
   }
-]
+}
 ```
 
 ## Installation

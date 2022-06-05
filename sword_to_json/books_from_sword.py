@@ -1,6 +1,6 @@
-from itertools import chain
-
 from pysword.modules import SwordModules
+
+from sword_to_json.utils.progess import Progress
 
 
 def generate_books(sword, module):
@@ -8,26 +8,32 @@ def generate_books(sword, module):
     modules.parse_modules()
     bible = modules.get_bible_from_module(module)
 
-    books = []
+    book_structure = bible.get_structure().get_books()
 
-    for book_number, book in enumerate((*chain(*bible.get_structure().get_books().values()),), 1):
-        chapters = []
-        for chapter_number in range(1, book.num_chapters + 1):
-            verses = []
-            for verse_number in range(1, len(book.get_indicies(chapter_number)) + 1):
-                verses.append({
-                    "number": verse_number,
-                    "text": bible.get(books=[book.name], chapters=[chapter_number], verses=[verse_number])
-                })
-            chapters.append({
-                "number": chapter_number,
-                "verses": verses
+    books = {}
+
+    progress = Progress(sum([len(v) for v in book_structure.values()]))
+
+    for testament, testament_books in book_structure.items():
+        books[testament] = []
+        for number, book in enumerate(testament_books, start=sum([len(v) for v in books.values()]) + 1):
+            books[testament].append({
+                "number": number,
+                "name": book.name,
+                "abbreviation": book.preferred_abbreviation,
+                "chapters": [
+                    {
+                        "number": chapter,
+                        "verses": [
+                            {
+                                "number": verse,
+                                "text": bible.get(books=book.name, chapters=chapter, verses=verse).rstrip()
+                            } for verse in range(1, book.chapter_lengths[chapter - 1] + 1)
+                        ]
+                    } for chapter in range(1, book.num_chapters + 1)
+                ]
             })
-        books.append({
-            "number": book_number,
-            "name": book.name,
-            "abbreviation": book.preferred_abbreviation,
-            "chapters": chapters,
-        })
+
+            progress.update(number)
 
     return books
