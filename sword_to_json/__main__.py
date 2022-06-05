@@ -22,7 +22,7 @@ if args.output is None:
 
 def main():
     with open(args.output, 'w') as outfile:
-        json.dump(generate_books(args.sword, args.module), outfile)
+        json.dump({"books": generate_books(args.sword, args.module)}, outfile)
 
 
 main()
