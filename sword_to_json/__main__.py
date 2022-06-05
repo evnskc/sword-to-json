@@ -25,4 +25,5 @@ def main():
         json.dump({"books": generate_books(args.sword, args.module)}, outfile)
 
 
-main()
+if __name__ == '__main__':
+    main()
