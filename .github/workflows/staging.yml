@@ -1,0 +1,25 @@
+name: Staging
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: Staging
+  cancel-in-progress: true
+
+jobs:
+  staging:
+    name: Deploy to Staging
+    environment: staging
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v3
+
+      - name: Set up python and poetry
+        uses: ./.github/actions/setup
+
+      - name: Publish to TestPyPI
+        run: |
+          poetry config repositories.testpypi https://test.pypi.org/legacy/
+          poetry publish --username __token__ --password ${{ secrets.API_TOKEN }} --repository testpypi --build
