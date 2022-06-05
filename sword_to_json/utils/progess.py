@@ -10,6 +10,6 @@ class Progress(object):
         percent = (iteration / float(self._size)) * 100
         filled = int((percent * self._length) / 100)
         bar = ('█' * filled) + ('-' * (self._length - filled))
-        print(f" |{bar}| {percent:>3,.0f}% Complete", end='\r')
+        print(f"|{bar}| {percent:>3,.0f}% Complete", end='\r')
         if iteration == self._size:
             print()
