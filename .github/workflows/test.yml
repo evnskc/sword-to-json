@@ -1,4 +1,4 @@
-name: CI
+name: Test
 
 on:
   push:
@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: CI
+  group: Test
   cancel-in-progress: true
 
 jobs:
