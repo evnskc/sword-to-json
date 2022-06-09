@@ -1,6 +1,6 @@
-[![CI](https://github.com/evnskc/sword-to-json/actions/workflows/ci.yml/badge.svg)](https://github.com/evnskc/sword-to-json/actions/workflows/ci.yml)
-[![Staging](https://github.com/evnskc/sword-to-json/actions/workflows/staging.yml/badge.svg)](https://github.com/evnskc/sword-to-json/actions/workflows/staging.yml)
-[![CD](https://github.com/evnskc/sword-to-json/actions/workflows/cd.yml/badge.svg)](https://github.com/evnskc/sword-to-json/actions/workflows/cd.yml)
+[![Test](https://github.com/evnskc/sword-to-json/actions/workflows/test.yml/badge.svg)](https://github.com/evnskc/sword-to-json/actions/workflows/test.yml)
+[![Staging](https://github.com/evnskc/sword-to-json/actions/workflows/deploy-staging.yml/badge.svg)](https://github.com/evnskc/sword-to-json/actions/workflows/deploy-staging.yml)
+[![Production](https://github.com/evnskc/sword-to-json/actions/workflows/deploy-production.yml/badge.svg)](https://github.com/evnskc/sword-to-json/actions/workflows/deploy-production.yml)
 [![PyPI](https://img.shields.io/pypi/v/sword-to-json)](https://pypi.org/project/sword-to-json/)
 
 ## Generate JSON Files of Bible Translations from SWORD Modules
