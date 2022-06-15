@@ -4,7 +4,7 @@ version = "2.1.0"
 description = "Generate JSON Files of Bible Translations from SWORD Modules"
 license = "GPL-3.0-or-later"
 
-authors = ["evans <evans@fundi.dev>"]
+authors = ["Evans <evans@fundi.dev>"]
 
 readme = "README.md"
 
