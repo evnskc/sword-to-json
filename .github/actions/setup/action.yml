@@ -1,10 +1,11 @@
 name: Set up python and poetry
 
 description: Composite action to set up python and poetry
+
 inputs:
   python-version:
-    required: true
     description: Python version to use
+    required: true
 
 runs:
   using: composite
