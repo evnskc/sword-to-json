@@ -16,6 +16,11 @@ documentation = "https://github.com/evnskc/sword-to-json"
 
 keywords = ["sword", "bible text", "json"]
 
+packages = [
+    { include = "sword_to_json" },
+    { include = "utils" }
+]
+
 [tool.poetry.dependencies]
 python = "^3.10"
 pysword = "^0.2.8"
