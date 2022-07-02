@@ -10,24 +10,21 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Set up python
-      id: setup-python
-      uses: actions/setup-python@v3
-      with:
-        python-version: ${{ inputs.python-version }}
-
     - name: Set up poetry
       shell: bash
       run: |
         curl -sSL https://install.python-poetry.org | python -
         poetry config virtualenvs.in-project true
 
-    - name: Set up cache
-      uses: actions/cache@v3
+    - name: Set up python
+      id: setup-python
+      uses: actions/setup-python@v4
       with:
-        path: ./.venv
-        key: ${{ runner.os }}-python-${{ steps.setup-python.outputs.python-version }}-poetry-${{ hashFiles('**/poetry.lock') }}
+        python-version: ${{ inputs.python-version }}
+        cache: poetry
 
     - name: Install dependencies
       shell: bash
-      run: poetry install
+      run: |
+        poetry env use ${{ steps.setup-python.outputs.python-version }}
+        poetry install
