@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sword-to-json"
-version = "2.1.0"
+version = "2.1.1"
 description = "Generate JSON Files of Bible Translations from SWORD Modules"
 license = "GPL-3.0-or-later"
 

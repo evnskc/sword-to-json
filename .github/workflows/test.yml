@@ -23,7 +23,7 @@ jobs:
     strategy:
       matrix:
         python-version:
-          - '3.10'
+          - "3.10"
     steps:
       - name: Set up repository
         uses: actions/checkout@v3

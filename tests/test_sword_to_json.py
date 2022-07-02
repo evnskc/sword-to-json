@@ -10,8 +10,8 @@ def test_sword_to_json(sword, module):
         "type": "object",
         "properties": {
             "number": {"type": "integer", "minimum": 1},
-            "name": {"type": "string"},
-            "abbreviation": {"type": "string"},
+            "name": {"type": "string", "minLength": 1},
+            "abbreviation": {"type": "string", "minLength": 1},
             "chapters": {
                 "type": "array",
                 "uniqueItems": True,
@@ -26,7 +26,7 @@ def test_sword_to_json(sword, module):
                                 "type": "object",
                                 "properties": {
                                     "number": {"type": "integer", "minimum": 1},
-                                    "text": {"type": "string"}
+                                    "text": {"type": "string", "minLength": 1}
                                 }
                             }
                         }
