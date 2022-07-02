@@ -1,6 +1,6 @@
 from pysword.modules import SwordModules
 
-from sword_to_json.utils.progress import Progress
+from utils.progress import Progress
 
 
 def generate_books(sword, module):

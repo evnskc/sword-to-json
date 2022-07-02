@@ -1,10 +1,10 @@
 [tool.poetry]
 name = "sword-to-json"
-version = "2.1.0"
+version = "2.1.1"
 description = "Generate JSON Files of Bible Translations from SWORD Modules"
 license = "GPL-3.0-or-later"
 
-authors = ["evans <evans@fundi.dev>"]
+authors = ["Evans <evans@fundi.dev>"]
 
 readme = "README.md"
 
@@ -15,6 +15,11 @@ repository = "https://github.com/evnskc/sword-to-json"
 documentation = "https://github.com/evnskc/sword-to-json"
 
 keywords = ["sword", "bible text", "json"]
+
+packages = [
+    { include = "sword_to_json" },
+    { include = "utils" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"

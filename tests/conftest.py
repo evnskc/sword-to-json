@@ -5,7 +5,7 @@ import pytest
 
 @pytest.fixture
 def sword():
-    return Path(__file__).resolve().parent.parent.joinpath('KJV.zip')
+    return Path(__file__).resolve().parent.parent.joinpath("KJV.zip")
 
 
 @pytest.fixture
