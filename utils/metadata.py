@@ -1,8 +1,8 @@
 import importlib.metadata
 
-import sword_to_json
+from sword_to_json import __package__
 
-_metadata = importlib.metadata.metadata(sword_to_json.__package__)
+_metadata = importlib.metadata.metadata(__package__)
 
 name = _metadata["Name"]
 summary = _metadata["Summary"]
